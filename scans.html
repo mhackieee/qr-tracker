@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header>
+    <h1>Recent Scans</h1>
+</header>
+<div class="container">
+    <table>
+        <tr>
+            <th>Envelope</th>
+            <th>Timestamp</th>
+            <th>Location</th>
+            <th>Scanner</th>
+        </tr>
+        {% for s in scans %}
+        <tr>
+            <td>{{ s.Envelope_ID }}</td>
+            <td>{{ s.Device_Timestamp }}</td>
+            <td>{{ s.Location_ID }}</td>
+            <td>{{ s.Scanner_User_ID }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="{{ url_for('index') }}">Back</a></p>
+</div>
+</body>
+</html>

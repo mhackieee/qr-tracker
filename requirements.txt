@@ -1,0 +1,10 @@
+Flask
+pandas
+numpy
+matplotlib
+seaborn
+qrcode
+Pillow
+sqlalchemy
+scipy
+openpyxl

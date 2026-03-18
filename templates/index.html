@@ -3,6 +3,15 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('{{ url_for("static", filename="sw.js") }}')
+      .then(reg => console.log('SW registered', reg))
+      .catch(err => console.log('SW registration failed', err));
+  });
+}
+</script>
 <body>
 <header>
     <h1>USTP QR Tracker Dashboard</h1>
